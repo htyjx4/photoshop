@@ -31,3 +31,27 @@ void zoomimage(IMAGE* P/*TO*/,IMAGE* Q/*FROM*/,double ZoomRate,bool HighQuality=
 		}
 	}
 }
+IMAGE flipimage(IMAGE img,bool islr = 1){
+	IMAGE _img = img;
+	IMAGE t = img;
+	int h = img.getheight();
+	int w = img.getwidth();
+	int fin = 0;
+	printf("image :%d %d\n",w,h);
+	cout<<"finish[";
+	for(int y = 0;y<h;y++){
+		for(int x = 0;x<w;x++){
+			SetWorkingImage(&_img);
+			COLORREF c = getpixel(x,y);
+			SetWorkingImage(&t);
+			if(islr)putpixel(w-1-x,y,c);
+			else putpixel(x,h-1-y,c);
+		}
+		if((y/(double)h - fin)>2){
+			fin = y/(double)h;
+			cout<<"=";
+		}
+	}
+	cout<<"]\n";
+	SetWorkingImage(NULL);
+}

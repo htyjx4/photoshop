@@ -21,7 +21,7 @@ void seticon(HWND hwnd,string icon) {
     }
 }
 void psstart(){
-	HWND hwnd = initgraph(1415/2,936/2,SHOWCONSOLE);
+	HWND hwnd = initgraph(1415/2,936/2);
 	seticon(hwnd,"lib\\ps.ico");
 	IMAGE imgstart;
 	loadimage(&imgstart,"lib\\psstart.png",1415/2,936/2);
@@ -46,10 +46,4 @@ char* u82ansi(wchar_t* pWCStrKey){
 	WideCharToMultiByte(CP_OEMCP, 0, pWCStrKey, wcslen(pWCStrKey), pCStrKey, pSize, NULL, NULL);
 	pCStrKey[pSize] = '\0';
 	return pCStrKey;
-}
-wchar_t* readstrbox(int n,wchar_t* pPrompt,wchar_t* pTitle){
-	wchar_t s[n+2];
-	memset(s,0,sizeof s);
-	InputBox((LPTSTR)s,n,(LPCTSTR)pPrompt,(LPCTSTR)pTitle);
-	return s;
 }
