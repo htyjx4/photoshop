@@ -11,6 +11,7 @@
 #include<cmath>
 #include<graphics.h>
 #include<easyx.h>
+#pragma once
 using namespace std;
 int inputint(string prompt,string pDefault = "") {
     char s[15];
@@ -33,10 +34,10 @@ double inputfloat(string prompt) {
 	cout<<"inputfloat return:"<<r<<endl;
     return r;
 }
-string inputstr(string prompt,bool duohang = 0) {
+string inputstr(string prompt,bool duohang = 0,string mr ="") {
     char s[16385];
     memset(s,0,sizeof s);
-	InputBox(s, 16384,prompt.c_str(),"Photoshop","",0,(duohang?200:0),1);
+	InputBox(s, 16384,prompt.c_str(),"Photoshop",mr.c_str(),0,(duohang?200:0),1);
     return (string)s;
 }
 struct HTYFONT{

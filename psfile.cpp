@@ -55,11 +55,11 @@ string getopenfilename(char * filt) {
     }
 }
 string getsaveimgname(){
-	char*c = "png图片(.png)\0*.png\0gif图片(.gif)\0*.gif\0bmp图片(.bmp)\0*.bmp\0tif图片(.tif)\0*.tif\0jpeg图片(.jpg)\0*.jpg\0所有文件(*.*)\0*.*\0\0";
+	char c[] = "png图片(.png)\0*.png\0gif图片(.gif)\0*.gif\0bmp图片(.bmp)\0*.bmp\0tif图片(.tif)\0*.tif\0jpeg图片(.jpg)\0*.jpg\0所有文件(*.*)\0*.*\0\0";
 	return getsavefilename(c);
 }
 string getopenimgname(){
-	char*c = "png图片(.png)\0*.png\0gif图片(.gif)\0*.gif\0bmp图片(.bmp)\0*.bmp\0tif图片(.tif)\0*.tif\0jpeg图片(.jpg)\0*.jpg\0所有文件(*.*)\0*.*\0\0";
+	char c[] = "png图片(.png)\0*.png\0gif图片(.gif)\0*.gif\0bmp图片(.bmp)\0*.bmp\0tif图片(.tif)\0*.tif\0jpeg图片(.jpg)\0*.jpg\0所有文件(*.*)\0*.*\0\0";
 	return getopenfilename(c);
 }
 COLORREF _psfile_CustomColors[20];

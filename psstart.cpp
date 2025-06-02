@@ -32,7 +32,7 @@ void psstart(){
 	settextstyle(36,0,"Cascadia Code");
 	setbkcolor(WHITE);
 	settextcolor(BLACK);
-	for(int i = 0;i<v.size();i++){
+	for(int i = 0;i<(int)v.size();i++){
 		putimage(0,0,&imgstart,SRCCOPY);
 		string s = v[i]+"   ";
 		outtextxy(40/2,440/2,s.c_str());
